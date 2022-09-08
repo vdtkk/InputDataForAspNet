@@ -1,0 +1,26 @@
+﻿@using InputDataForAspNet.Models
+@model List<Person>
+
+
+<h2>Personel Listesi</h2>
+
+<ul>
+  
+        @foreach (Person item in Model)
+        {
+            <li>@item.PersonName</li>
+        }
+    
+</ul>
+
+<h2>
+    Kullanıcı Oluşturma
+</h2>
+
+<form method="post" action="/Person/AddPerson">
+    <label for="name">Personel Adı</label><br />
+    <input type="text" id="PersonName" name="PersonName" /> <br />
+    <label for="surname">Personel soyadı</label><br />
+    <input type="text" id="PersonSurName" name="PersonSurName" /> <br />
+    <input type="submit" value="Personel Ekle" />
+</form>

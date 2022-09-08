@@ -1,0 +1,19 @@
+﻿@using InputDataForAspNet.Models
+@model List<Product>
+
+<h1>Bütün ürünler Listelendi</h1>
+
+<ul>
+    @foreach (Product item in Model)
+    {
+        <table>
+            <tr>
+                <td>
+                      <li>@item.Id</li>
+               </td>
+                <td>@item.ProductName</td>
+            </tr>
+        </table>
+
+    }
+</ul>

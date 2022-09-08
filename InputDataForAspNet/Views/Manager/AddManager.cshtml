@@ -1,0 +1,23 @@
+﻿@using InputDataForAspNet.Models
+@model Manager
+
+@addTagHelper  *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Müdür ekle</h2>
+<form method="post" asp-action="AddManager" asp-controller="Manager">
+    <div>
+        <label asp-for="FirstName">İsim</label><br />
+        <input type="text" asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="LastName">Soyadı</label><br />
+        <input type="text" asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="DepartmenId">Departman</label><br />
+        <select asp-for="DepartmenId" asp-items="@(new SelectList(ViewBag.Departmens, "Id","DepartmenName")) "></select>
+    </div>
+    <div>
+        <button type="submit">Müdür Ekle</button>
+    </div>
+</form>

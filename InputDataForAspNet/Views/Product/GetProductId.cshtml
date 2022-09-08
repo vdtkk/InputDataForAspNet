@@ -1,0 +1,14 @@
+﻿@using InputDataForAspNet.Models
+@model Product
+<h1>Seçilen Ürün</h1>
+
+@if (ViewBag.Error != null)
+{
+    <h2>@ViewBag.Error</h2>
+}
+else
+{
+    <h4>@Model.Id</h4>
+    <h4>@Model.ProductName</h4>
+}
+

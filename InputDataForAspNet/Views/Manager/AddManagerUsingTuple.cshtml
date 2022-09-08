@@ -1,0 +1,23 @@
+﻿@using InputDataForAspNet.Models
+@model (List<Departmen> departmens, Manager managers)
+@addTagHelper  *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Tuple kullanımı</h2>
+
+<form method="post" asp-action="AddManagerUsingTuple" asp-controller="Manager">
+    <div>
+        <label asp-for="managers.FirstName">İsim</label><br />
+        <input type="text" asp-for="managers.FirstName" />
+    </div>
+    <div>
+        <label asp-for="managers.LastName">Soyadı</label><br />
+        <input type="text" asp-for="managers.LastName" />
+    </div>
+    <div>
+        <label asp-for="managers.DepartmenId">Departman</label><br />
+        <select asp-for="managers.DepartmenId" asp-items="@(new SelectList(Model.departmens, "Id","DepartmenName")) "></select>
+    </div>
+    <div>
+        <button type="submit">Müdür Ekle</button>
+    </div>
+</form>

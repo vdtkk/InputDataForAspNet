@@ -1,0 +1,16 @@
+﻿@using InputDataForAspNet.Models
+@model List<Product>
+
+@if (ViewData["Error"] != null)
+{
+                <h1>@ViewData["Error"].ToString()</h1>
+}
+else
+{
+    <ul>
+        @foreach (Product item in Model)
+        {
+            <li>@item.ProductName</li>
+        }
+    </ul>
+}
